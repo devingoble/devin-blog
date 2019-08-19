@@ -11,8 +11,8 @@ pool:
 
 steps:
 - script: |
-    yarn install
-  displayName: 'yarn install'
+    yarn global add @gridsome/cli
+  displayName: 'yarn setup'
 
 - script: |
     gridsome Build

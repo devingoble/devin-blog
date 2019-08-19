@@ -11,7 +11,7 @@ pool:
 
 steps:
 - script: |
-    yarn global add @gridsome/cli
+    sudo yarn global add @gridsome/cli
   displayName: 'yarn setup'
 
 - script: |

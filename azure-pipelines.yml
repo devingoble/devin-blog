@@ -12,4 +12,8 @@ pool:
 steps:
 - script: |
     yarn install
-  displayName: 'npm install'
+  displayName: 'yarn install'
+
+- script: |
+    gridsome Build
+  displayName: 'gridsome build'

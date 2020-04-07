@@ -1,17 +1,23 @@
 <template>
-  <div>
+  <div class="overflow-x-hidden md:overflow-auto">
     <transition name="slide-fade" appear>
-      <nav class="flex flex-row justify-start sticky top-0 w-screen items-center bg-white shadow-md">
-        <g-link to="/" class="block p-6">
-          <object type="image/svg+xml" data="logo.svg" class="logo"></object>
+      <nav class="flex flex-row justify-start fixed top-0 w-screen items-center bg-white border-b border border-global-border">
+        <g-link to="/" class="block p-2 md:p-6">
+          <object type="image/svg+xml" data="~/assets/logo.svg" class="logo"></object>
         </g-link>
-        <g-link class="block p-6" exact to="/">Home</g-link>
-        <g-link class="block p-6" to="/about">About</g-link>
+        <g-link class="block p-2 md:p-6" exact to="/">Home</g-link>
+        <g-link class="block p-2 md:p-6" to="/about">About</g-link>
       </nav>
     </transition>
-    <div class="flex flex-wrap p-4 xl:p-24 lg:p-24 md:-p-12 sm:p-6">
-      <SideBar />
-      <slot/>
+    <div class="flex justify-center mt-16 md:mt-20">
+      <div class="flex flex-col md:flex-row flex-shrink flex-wrap overflow-hidden md:p-4 md:m-2">
+        <div class = "flex-grow md:sidebar border-solid border mx-2 mt-2 md:m-4 bg-white border-global-border">
+          <SideBar />
+        </div>
+        <div class="content m-2 md:m-4 bg-white border-solid border border-global-border">
+          <slot />
+        </div>
+      </div>
     </div>
     <div class="footer">
       <p>
@@ -23,14 +29,14 @@
 </template>
 
 <script>
-  import {throttle} from 'lodash';
-  import SideBar from '~/components/SideBar.vue';
+import { throttle } from "lodash";
+import SideBar from "~/components/SideBar.vue";
 
-  export default {
-    components: {
-      SideBar
-    }
+export default {
+  components: {
+    SideBar
   }
+};
 </script>
 
 <style>
@@ -39,8 +45,10 @@
 @import "tailwindcss/utilities";
 
 :root {
-  --link-color:  #474747;
+  --link-color: #474747;
   --hover-color: #eeeeee;
+  --background-color: #f4f4f4;
+  --border-color: #d7d7d7;
 }
 
 body {
@@ -48,10 +56,11 @@ body {
   padding: 0;
   line-height: 1.5;
   min-height: 100vh;
+  background: var(--background-color);
 }
 
 .slide-fade-enter-active {
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 .slide-fade-enter {
@@ -62,6 +71,21 @@ body {
 .logo {
   height: 100%;
   pointer-events: none;
+}
+
+.content {
+    flex: 1 1 400px;
+    max-width: 1000px;
+    min-width: 300px;
+}
+
+@responsive {
+  .sidebar {
+      max-width: 250px;
+      max-height: 300px;
+      min-width: 200px;
+
+  }
 }
 
 .footer {

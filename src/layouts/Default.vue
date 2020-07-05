@@ -77,6 +77,7 @@ body {
     flex: 1 1 400px;
     max-width: 1000px;
     min-width: 300px;
+    min-height: 300px;
 }
 
 @responsive {

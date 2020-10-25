@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <section class="posts">
+    <section class="divide-y divide-global-border">
       <PostList v-for="edge in $page.allPost.edges" :key="edge.node.id" :post="edge.node" />
     </section>
   </Layout>
@@ -53,4 +53,5 @@ query {
 .header p {
   font-weight: 200;
 }
+
 </style>

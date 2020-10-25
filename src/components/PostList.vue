@@ -1,6 +1,5 @@
 <template>
   <div class="px-2">
-    <hr class="line">
     <p class="date" v-html="post.date"/>
     <h1 class="title" v-html="post.title"/>
     <p class="description" v-html="post.description"/>
@@ -16,11 +15,6 @@ export default {
 </script>
 
 <style>
-.line {
-  border: 0.5px solid #cdc8c5;
-  margin: 30px 0;
-}
-
 .date {
   font-weight: 300;
 }

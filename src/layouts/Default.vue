@@ -73,6 +73,25 @@ body {
   pointer-events: none;
 }
 
+.wrapper {
+  display: grid;
+  grid-template-columns:
+    1fr
+    min(65ch, 100%)
+    1fr;
+}
+.wrapper > * {
+  grid-column: 2;
+}
+.full-bleed {
+  width: 100%;
+  grid-column: 1 / 4;
+}
+
+.left-column {
+  grid-column: 1;
+}
+
 .content {
     flex: 1 1 400px;
     max-width: 1000px;

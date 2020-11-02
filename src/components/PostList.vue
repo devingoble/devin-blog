@@ -1,10 +1,8 @@
 <template>
-  <div class="px-2">
-    <p class="date" v-html="post.date"/>
-    <h1 class="title" v-html="post.title"/>
+  <div class="p-4 mb-4 bg-white border-solid border border-global-border rounded">
+    <g-link :to="post.path" class="text-xl font-bold text-blue-700 visited:text-purple-700 hover:underline">{{post.title}}</g-link>
+    <p class="text-sm text-gray-600">{{post.date}} - {{post.timeToRead}} min read</p>
     <p class="description" v-html="post.description"/>
-    <b>{{post.timeToRead}} min read</b> &nbsp;
-    <g-link :to="post.path" class="read">Read More...</g-link>
   </div>
 </template>
 
@@ -15,9 +13,6 @@ export default {
 </script>
 
 <style>
-.date {
-  font-weight: 300;
-}
 
 .read {
   padding: 7px;

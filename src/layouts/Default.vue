@@ -11,10 +11,10 @@
     </transition>
     <div class="flex justify-center mt-16 md:mt-20">
       <div class="flex flex-col md:flex-row flex-shrink flex-wrap overflow-hidden md:p-4 md:m-2">
-        <div class = "flex-grow md:sidebar border-solid border mx-2 mt-2 md:m-4 bg-white border-global-border">
+        <div class = "flex-grow md:sidebar border-solid border mx-2 mt-2 md:m-4 bg-white border-global-border rounded">
           <SideBar />
         </div>
-        <div class="content m-2 md:m-4 bg-white border-solid border border-global-border">
+        <div class="content m-2 md:m-4">
           <slot />
         </div>
       </div>

@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <section class="divide-y divide-global-border">
+    <section class="">
       <PostList v-for="edge in $page.allPost.edges" :key="edge.node.id" :post="edge.node" />
     </section>
   </Layout>

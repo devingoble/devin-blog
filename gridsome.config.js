@@ -12,7 +12,13 @@ module.exports = {
             options: {
                 path: 'content/posts/**/*.md',
                 typeName: 'Post',
-                route: '/blog/:year/:month/:day/:title'
+                route: '/blog/:year/:month/:day/:title',
+                refs: {
+                    tags: {
+                        typeName: 'Tag',
+                        create: true
+                    },
+                }
             }
         },
         {
@@ -27,6 +33,10 @@ module.exports = {
             }
         }
     ],
+    templates: {
+        Tag: '/tag/:id',
+        Post: '/blog/:year/:month/:day/:title'
+    },
     transformers: {
         //Add markdown support to all file-system sources
         remark: {

@@ -1,7 +1,8 @@
 ---
 title: "Welcome"
-description: "The first post."
+summary: "The first post."
 date: 2020-07-07
+tags: ['test','c#','.NET Core','2020']
 ---
 
 For a long time I've wanted to record some of my thoughts on a variety of topics. Sometimes I'll search high and low for an answer, only to end up at a purple link, but no memory of ever having been there before. My goal is to try to capture those moments here.

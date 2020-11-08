@@ -4,6 +4,17 @@
     <g-link to="/" class="link">  &larr; Go Back</g-link>
     <div class="post-title">
       <h1>{{$page.post.title}}</h1>
+
+      <div>
+        Tags:
+        <g-link
+            v-for="tag in $page.post.tags"
+            :to="tag.path"
+            :key="tag.id">
+          #{{ tag.title }}
+        </g-link>
+      </div>
+
       <p class="post-date"> {{ $page.post.date}} | {{$page.post.timeToRead}} min read</p>
     </div>
     <div class="post-content">
@@ -17,9 +28,14 @@ query Post ($path: String!) {
    post: post (path: $path) {
     id
     title
+    summary
     content
     date (format: "D MMMM YYYY")
     timeToRead
+    tags {
+      title
+      path
+    }
   }
 }
 </page-query>

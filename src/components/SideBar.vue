@@ -6,7 +6,7 @@
             </div>
             <span class="text-3xl ml-1 md:ml-0">Devin Goble</span>
         </div>
-        <div class="flex flex-row items-center">
+        <div class="flex flex-row items-center mr-2 md:mr-0">
             <a class="m-1 md:m-2" href="https://github.com/devingoble" target="_blank" title="GitHub"><font-awesome :icon="['fab', 'github']" size="2x" /></a>
             <a class="m-1 md:m-2" href="https://www.linkedin.com/in/devingoble" target="_blank" title="LinkedIn"><font-awesome :icon="['fab', 'linkedin']" size="2x" /></a>
             <a class="m-1 md:m-2" href="https://twitter.com/devinbgoble" target="_blank" title="Twitter"><font-awesome :icon="['fab', 'twitter']" size="2x" /></a>

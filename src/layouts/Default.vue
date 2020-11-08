@@ -9,8 +9,7 @@
         <g-link class="block p-2 md:p-6" to="/about">About</g-link>
       </nav>
     </transition>
-    <div class="flex justify-center mt-16 md:mt-20">
-      <div class="flex flex-col md:flex-row flex-shrink flex-wrap overflow-hidden md:p-4 md:m-2">
+      <div class="flex justify-center flex-col md:flex-row flex-shrink flex-wrap overflow-hidden md:p-4 md:m-2 mt-16 md:mt-20">
         <div class = "flex-grow md:sidebar border-solid border mx-2 mt-2 md:m-4 bg-white border-global-border rounded">
           <SideBar />
         </div>
@@ -18,7 +17,6 @@
           <slot />
         </div>
       </div>
-    </div>
     <div class="footer">
       <p>
         Built with
@@ -94,7 +92,7 @@ body {
 
 .content {
     flex: 1 1 400px;
-    max-width: 1000px;
+    max-width: 800px;
     min-width: 300px;
     min-height: 300px;
 }
@@ -104,7 +102,7 @@ body {
       max-width: 250px;
       max-height: 300px;
       min-width: 200px;
-
+      min-height: 200px;
   }
 }
 

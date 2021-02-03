@@ -1,7 +1,7 @@
 <template>
   <div class="overflow-x-hidden md:overflow-auto">
     <transition name="slide-fade" appear>
-      <nav class="flex flex-row justify-start fixed top-0 w-screen items-center bg-white border-b border border-global-border">
+      <nav class="flex flex-row justify-start fixed top-0 w-screen items-center bg-white border-b border border-gray-300">
         <g-link to="/" class="block p-2 md:p-6">
           <object type="image/svg+xml" data="~/assets/logo.svg" class="logo"></object>
         </g-link>
@@ -10,7 +10,7 @@
       </nav>
     </transition>
       <div class="flex justify-center flex-col md:flex-row flex-shrink flex-wrap overflow-hidden md:p-4 md:m-2 mt-16 md:mt-20">
-        <div class = "flex-grow md:sidebar border-solid border mx-2 mt-2 md:m-4 bg-white border-global-border rounded">
+        <div class = "flex-grow md:sidebar border-solid border mx-2 mt-2 md:m-4 bg-white border-gray-300 rounded">
           <SideBar />
         </div>
         <div class="content m-2 md:m-4">
@@ -91,7 +91,7 @@ body {
 }
 
 .content {
-    flex: 1 1 400px;
+    flex: 1 1;
     max-width: 800px;
     min-width: 300px;
     min-height: 300px;

@@ -1,7 +1,7 @@
 <template>
   <Layout>
-    <section class="">
-      <PostList v-for="edge in $page.allPost.edges" :key="edge.node.id" :post="edge.node" />
+    <section class="flex flex-col">
+      <PostList v-for="edge in $page.allPost.edges" :key="edge.node.id" :post="edge.node" class="flex-grow-0" />
     </section>
   </Layout>
 </template>
@@ -34,6 +34,12 @@ query {
         timeToRead
         date (format: "D MMMM YYYY")
         path
+        image (width: 200, quality: 90)
+        tags {
+          id
+          path
+          title
+        }
       }
     }
 

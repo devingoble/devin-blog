@@ -1,17 +1,22 @@
 <template>
-  <div class="overflow-x-hidden md:overflow-auto">
+  <div class="overflow-x-hidden md:overflow-auto bg-gray-100">
     <transition name="slide-fade" appear>
-      <nav class="flex flex-row justify-start fixed top-0 w-screen items-center bg-white border-b border border-gray-300">
+      <nav class="flex flex-row justify-start fixed top-0 w-screen items-center bg-white border-b border border-gray-300 shadow">
         <g-link to="/" class="block p-2 md:p-6">
           <object type="image/svg+xml" data="~/assets/logo.svg" class="logo"></object>
         </g-link>
-        <g-link class="block p-2 md:p-6" exact to="/">Home</g-link>
-        <g-link class="block p-2 md:p-6" to="/about">About</g-link>
+        <g-link class="block p-2 md:p-4 hover:bg-gray-100" exact to="/">Home</g-link>
+        <g-link class="block p-2 md:p-4 hover:bg-gray-100" to="/about">About</g-link>
       </nav>
     </transition>
       <div class="flex justify-center flex-col md:flex-row flex-shrink flex-wrap overflow-hidden md:p-4 md:m-2 mt-16 md:mt-20">
-        <div class = "flex-grow md:sidebar border-solid border mx-2 mt-2 md:m-4 bg-white border-gray-300 rounded">
+        <div class="flex flex-shrink flex-col">
+        <div class = "flex-grow md:px-4 md:sidebar border-solid border mx-2 mt-2 md:m-4 border-gray-300 rounded bg-white shadow-md">
           <SideBar />
+        </div>
+        <div class = "flex-grow md:px-4 md:sidebar border-solid border mx-2 mt-2 md:m-4 border-gray-300 rounded bg-white shadow-md">
+          <TagSideBar />
+        </div>
         </div>
         <div class="content m-2 md:m-4">
           <slot />
@@ -27,12 +32,13 @@
 </template>
 
 <script>
-import { throttle } from "lodash";
 import SideBar from "~/components/SideBar.vue";
+import TagSideBar from "~/components/TagSideBar.vue";
 
 export default {
   components: {
-    SideBar
+    SideBar,
+    TagSideBar
   }
 };
 </script>
@@ -45,7 +51,7 @@ export default {
 :root {
   --link-color: #474747;
   --hover-color: #eeeeee;
-  --background-color: #f4f4f4;
+  --background-color: #F4F4F4;
   --border-color: #d7d7d7;
 }
 

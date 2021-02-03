@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <section class="flex flex-col">
-      <PostList v-for="edge in $page.allPost.edges" :key="edge.node.id" :post="edge.node" class="flex-grow-0" />
+      <PostList v-for="edge in $page.allPost.edges" :key="edge.node.id" :post="edge.node" class="flex-grow-0 bg-white shadow-md" />
     </section>
   </Layout>
 </template>

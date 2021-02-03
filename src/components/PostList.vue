@@ -4,7 +4,7 @@
   >
     <div class="flex flex-row">
       <g-image :src="post.image" />
-      <div>
+      <div class="ml-3">
         <g-link
           :to="post.path"
           class="text-xl font-bold text-blue-700 visited:text-purple-700 hover:underline"

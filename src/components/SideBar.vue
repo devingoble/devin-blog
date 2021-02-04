@@ -1,5 +1,5 @@
 <template>
-    <div class="flex md:flex-col justify-between items-center h-20">
+    <div class="flex flex-grow md:flex-col justify-between items-center h-20">
         <div class="flex md:flex-col items-center">
             <div class="my-1 mx-2 w-16 h-16 md:mt-4 md:w-32 md:h-32">
                 <g-image src="~/assets/headshot.jpg" class="rounded-full"/>

@@ -1,27 +1,46 @@
 <template>
   <div class="overflow-x-hidden md:overflow-auto bg-gray-100">
     <transition name="slide-fade" appear>
-      <nav class="flex flex-row justify-start fixed top-0 w-screen items-center bg-white border-b border border-gray-300 shadow">
+      <nav
+        class="flex flex-row justify-start fixed top-0 w-screen items-center bg-white border-b border border-gray-300 shadow"
+      >
         <g-link to="/" class="block p-2 md:p-6">
-          <object type="image/svg+xml" data="~/assets/logo.svg" class="logo"></object>
+          <object
+            type="image/svg+xml"
+            data="~/assets/logo.svg"
+            class="logo"
+          ></object>
         </g-link>
-        <g-link class="block p-2 md:p-4 hover:bg-gray-100" exact to="/">Home</g-link>
-        <g-link class="block p-2 md:p-4 hover:bg-gray-100" to="/about">About</g-link>
+        <g-link class="block p-2 md:p-4 hover:bg-gray-100" exact to="/"
+          >Home</g-link
+        >
+        <g-link class="block p-2 md:p-4 hover:bg-gray-100 md:hidden" exact to="/tags"
+          >Tags</g-link
+        >
+        <g-link class="block p-2 md:p-4 hover:bg-gray-100" to="/about"
+          >About</g-link
+        >
       </nav>
     </transition>
-      <div class="flex justify-center flex-col md:flex-row flex-shrink flex-wrap overflow-hidden md:p-4 md:m-2 mt-16 md:mt-20">
-        <div class="flex flex-shrink flex-col">
-        <div class = "flex-grow md:px-4 md:sidebar border-solid border mx-2 mt-2 md:m-4 border-gray-300 rounded bg-white shadow-md">
+    <div
+      class="flex flex-col md:flex-row flex-shrink justify-center flex-wrap overflow-hidden md:p-4 md:m-2 mt-12 md:mt-20"
+    >
+      <div class="flex md:flex-col">
+        <div
+          class="flex flex-grow md:px-4 md:sidebar md:justify-center border-solid border mx-2 mt-2 md:m-4 border-gray-300 rounded bg-white shadow-md"
+        >
           <SideBar />
         </div>
-        <div class = "flex-grow md:px-4 md:sidebar border-solid border mx-2 mt-2 md:m-4 border-gray-300 rounded bg-white shadow-md">
-          <TagSideBar />
-        </div>
-        </div>
-        <div class="content m-2 md:m-4">
-          <slot />
+        <div
+          class="hidden md:flex flex-grow md:px-4 md:sidebar border-solid border mx-2 mt-2 md:m-4 border-gray-300 rounded bg-white shadow-md"
+        >
+          <TagList />
         </div>
       </div>
+      <div class="content m-2 md:m-4">
+        <slot />
+      </div>
+    </div>
     <div class="footer">
       <p>
         Built with
@@ -33,13 +52,13 @@
 
 <script>
 import SideBar from "~/components/SideBar.vue";
-import TagSideBar from "~/components/TagSideBar.vue";
+import TagList from "~/components/TagList.vue";
 
 export default {
   components: {
     SideBar,
-    TagSideBar
-  }
+    TagList,
+  },
 };
 </script>
 
@@ -51,7 +70,7 @@ export default {
 :root {
   --link-color: #474747;
   --hover-color: #eeeeee;
-  --background-color: #F4F4F4;
+  --background-color: #f4f4f4;
   --border-color: #d7d7d7;
 }
 
@@ -97,18 +116,18 @@ body {
 }
 
 .content {
-    flex: 1 1;
-    max-width: 800px;
-    min-width: 300px;
-    min-height: 300px;
+  flex: 1 1;
+  max-width: 800px;
+  min-width: 300px;
+  min-height: 300px;
 }
 
 @responsive {
   .sidebar {
-      max-width: 250px;
-      max-height: 300px;
-      min-width: 200px;
-      min-height: 200px;
+    max-width: 250px;
+    max-height: 300px;
+    min-width: 200px;
+    min-height: 300px;
   }
 }
 

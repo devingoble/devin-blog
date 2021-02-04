@@ -1,7 +1,9 @@
 <template>
   <Layout>
-    <article>
-      <h1>Posts tagged {{ $page.tag.title }}</h1>
+    <div
+      class="flex flex-col p-4 mb-4 bg-white border-solid border border-gray-300 rounded shadow-md"
+    >
+      <h1 class="text-2xl font-bold">Posts tagged "{{ $page.tag.title }}"</h1>
 
       <ul>
         <li v-for="post in $page.tag.belongsTo.edges" :key="post.node.id">
@@ -11,7 +13,7 @@
           {{ post.node.date }}
         </li>
       </ul>
-    </article>
+    </div>
   </Layout>
 </template>
 

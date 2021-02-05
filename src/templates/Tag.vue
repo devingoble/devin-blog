@@ -4,16 +4,13 @@
       class="flex flex-col p-4 mb-4 bg-white border-solid border border-gray-300 rounded shadow-md"
     >
       <h1 class="text-2xl font-bold">Posts tagged "{{ $page.tag.title }}"</h1>
-
-      <ul>
-        <li v-for="post in $page.tag.belongsTo.edges" :key="post.node.id">
-          <h3>
-            <g-link :to="post.node.path">{{ post.node.title }}</g-link>
-          </h3>
-          {{ post.node.date }}
-        </li>
-      </ul>
     </div>
+    <PostList
+      v-for="post in $page.tag.belongsTo.edges"
+      :key="post.node.id"
+      :post="post.node"
+      class="flex-grow-0 bg-white shadow-md"
+    />
   </Layout>
 </template>
 
@@ -45,7 +42,12 @@ query Tag ($id: ID!, $page: Int) {
 </page-query>
 
 <script>
+import PostList from "@/components/PostList";
+
 export default {
+  components: {
+    PostList,
+  },
   metaInfo() {
     return {
       title: `Tag: ${this.$page.tag.title}`,

@@ -5,7 +5,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-    siteName: 'Gridsome Blog',
+    siteName: 'Devin Goble\'s blog',
     siteDescription: 'A simple blog designed with Gridsome',
     plugins: [{
             use: '@gridsome/source-filesystem',

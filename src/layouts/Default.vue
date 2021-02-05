@@ -5,11 +5,7 @@
         class="flex flex-row justify-start fixed top-0 w-screen items-center bg-white border-b border border-gray-300 shadow"
       >
         <g-link to="/" class="block p-2 md:p-6">
-          <object
-            type="image/svg+xml"
-            data="~/assets/logo.svg"
-            class="logo"
-          ></object>
+          <Logo />
         </g-link>
         <g-link class="block p-2 md:p-4 hover:bg-gray-100" exact to="/"
           >Home</g-link
@@ -53,11 +49,13 @@
 <script>
 import SideBar from "~/components/SideBar.vue";
 import TagList from "~/components/TagList.vue";
+import Logo from "~/assets/logo.svg";
 
 export default {
   components: {
     SideBar,
     TagList,
+    Logo
   },
 };
 </script>

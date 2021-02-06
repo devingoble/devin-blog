@@ -12,8 +12,9 @@ library.add(faGithub, faTwitter, faDev, faLinkedin)
 
 export default function(Vue, { router, head, isClient }) {
     head.link.push({
-            rel: 'stylesheet',
-            href: 'https://fonts.googleapis.com/css?family=Stylish&display=swap'
+            rel: 'icon',
+            type: 'image/png',
+            href: 'favicon.png'
         }),
         // Set default layout as a global component
         Vue.component('Layout', DefaultLayout),

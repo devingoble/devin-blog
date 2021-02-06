@@ -1,24 +1,26 @@
 <template>
   <Layout>
-    <br>
-    <g-link to="/" class="link">  &larr; Go Back</g-link>
-    <div class="post-title">
-      <h1>{{$page.post.title}}</h1>
-
-      <div>
-        Tags:
-        <g-link
+    <div
+      class="flex flex-col p-4 mb-4 bg-white border-solid border border-gray-300 rounded shadow-md"
+    >
+      <g-image :src="$page.post.image" />
+      <div class="flex flex-col items-center my-4">
+        <h1 class="text-4xl">{{ $page.post.title }}</h1>
+        <p class="text-gray-600">
+          {{ $page.post.date }} | {{ $page.post.timeToRead }} min read
+        </p>
+        <div class="flex flex-row my-2">
+          <TagChip
             v-for="tag in $page.post.tags"
-            :to="tag.path"
-            :key="tag.id">
-          #{{ tag.title }}
-        </g-link>
+            :key="tag.id"
+            v-bind:tag-path="tag.path"
+            v-bind:tag-label="tag.title"
+          />
+        </div>
       </div>
-
-      <p class="post-date"> {{ $page.post.date}} | {{$page.post.timeToRead}} min read</p>
-    </div>
-    <div class="post-content">
-      <p v-html="$page.post.content" />
+      <div class="post-content">
+        <p v-html="$page.post.content" />
+      </div>
     </div>
   </Layout>
 </template>
@@ -29,8 +31,9 @@ query Post ($path: String!) {
     id
     title
     summary
+    image (height: 1000)
     content
-    date (format: "D MMMM YYYY")
+    date (format: "MMMM DD, YYYY")
     timeToRead
     tags {
       title
@@ -40,22 +43,18 @@ query Post ($path: String!) {
 }
 </page-query>
 
+<script>
+import TagChip from "~/components/TagChip.vue";
+
+export default {
+  components: {
+    TagChip,
+  },
+};
+</script>
+
 <style>
-
-.post-title {
-  text-align: center;
-  font-size: 30px;
-  line-height: 10px;
-  padding: 2em 0;
-  font-family: 'Stylish';
-}
-
-.post-date {
-  font-size: 16px;
-  font-weight: 400;
-}
-
-.post-content {
-  font-size: 20px;
+p {
+  margin-bottom: 1rem;
 }
 </style>

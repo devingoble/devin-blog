@@ -39,12 +39,6 @@ export default {
 </script>
 
 <style>
-.read {
-  padding: 7px;
-  color: #333;
-  text-decoration: none;
-  border: 2px dashed #fecd43;
-}
 
 .preview-hero-image {
   max-height: 150px;

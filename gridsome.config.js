@@ -8,30 +8,30 @@ module.exports = {
     siteName: 'Devin Goble\'s blog',
     siteDescription: 'A simple blog designed with Gridsome',
     plugins: [{
-            use: '@gridsome/source-filesystem',
-            options: {
-                path: 'content/posts/**/*.md',
-                typeName: 'Post',
-                route: '/blog/:year/:month/:day/:title',
-                refs: {
-                    tags: {
-                        typeName: 'Tag',
-                        create: true
-                    },
-                }
-            }
-        },
-        {
-            use: 'gridsome-plugin-tailwindcss',
-            options: {
-                tailwindConfig: './tailwind.config.js',
-                purgeConfig: {},
-                presetEnvConfig: {},
-                shouldPurge: true,
-                shouldImport: true,
-                shouldTimeTravel: true,
+        use: '@gridsome/source-filesystem',
+        options: {
+            path: 'content/posts/**/*.md',
+            typeName: 'Post',
+            route: '/blog/:year/:month/:day/:title',
+            refs: {
+                tags: {
+                    typeName: 'Tag',
+                    create: true
+                },
             }
         }
+    },
+    {
+        use: 'gridsome-plugin-tailwindcss',
+        options: {
+            tailwindConfig: './tailwind.config.js',
+            purgeConfig: {},
+            presetEnvConfig: {},
+            shouldPurge: true,
+            shouldImport: true,
+            shouldTimeTravel: true,
+        }
+    }
     ],
     templates: {
         Tag: '/tag/:id',
@@ -47,4 +47,11 @@ module.exports = {
             ]
         }
     },
+    chainWebpack: config => {
+        const svgRule = config.module.rule('svg')
+        svgRule.uses.clear()
+        svgRule
+            .use('vue-svg-loader')
+            .loader('vue-svg-loader')
+    }
 }

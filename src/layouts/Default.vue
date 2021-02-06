@@ -4,8 +4,8 @@
       <nav
         class="flex flex-row justify-start fixed top-0 w-screen items-center bg-white border-b border border-gray-300 shadow"
       >
-        <g-link to="/" class="block p-2 md:p-6">
-          <Logo />
+        <g-link to="/" class="block">
+          <Logo class="ml-2 h-10 w-10" />
         </g-link>
         <g-link class="block p-2 md:p-4 hover:bg-gray-100" exact to="/"
           >Home</g-link
